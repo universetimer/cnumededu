@@ -690,6 +690,20 @@ ul, ol {
   color: var(--cnu-navy-dark);
 }
 
+.member-past {
+  background: var(--cnu-gray-50);
+  border-color: var(--cnu-gray-200);
+}
+
+.member-past .member-avatar {
+  background: var(--cnu-gray-500);
+  color: var(--white);
+}
+
+.member-past .member-role {
+  color: var(--cnu-gray-500);
+}
+
 /* Photo with fallback for director cards */
 .member-photo {
   width: 120px;
