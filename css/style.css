@@ -704,6 +704,205 @@ ul, ol {
   color: var(--cnu-gray-500);
 }
 
+/* ===== Workshop Hero & Schedule ===== */
+.ws-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  background: linear-gradient(135deg, var(--cnu-navy) 0%, var(--cnu-navy-light) 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  color: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+.ws-tag {
+  display: inline-block;
+  background: var(--cnu-gold);
+  color: var(--cnu-navy-dark);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.ws-hero-meta h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ws-lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ws-hero-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ws-fact {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws-fact-label {
+  color: var(--cnu-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ws-fact strong {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ws-fact-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+/* Schedule */
+.ws-schedule {
+  background: var(--white);
+  border: 1px solid var(--cnu-gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.ws-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 200px;
+  gap: 16px;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--cnu-gray-200);
+  align-items: center;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.ws-row:last-child { border-bottom: none; }
+
+.ws-time {
+  font-family: 'SF Mono', Consolas, monospace;
+  color: var(--cnu-navy);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.ws-topic {
+  color: var(--cnu-gray-900);
+}
+
+.ws-topic small {
+  color: var(--cnu-gray-500);
+  font-size: 13px;
+  line-height: 1.6;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.ws-topic strong {
+  color: var(--cnu-navy);
+  font-weight: 800;
+}
+
+.ws-format {
+  display: inline-block;
+  background: var(--cnu-sky);
+  color: var(--cnu-navy);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.ws-speaker {
+  text-align: right;
+  color: var(--cnu-gray-700);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ws-speaker small {
+  font-weight: 400;
+  color: var(--cnu-gray-500);
+  font-size: 12px;
+}
+
+/* row variants */
+.ws-row-key {
+  background: linear-gradient(90deg, rgba(200, 164, 92, 0.08) 0%, transparent 100%);
+  border-left: 3px solid var(--cnu-gold);
+}
+
+.ws-row-meta {
+  background: var(--cnu-gray-50);
+  color: var(--cnu-gray-500);
+}
+
+.ws-row-meta .ws-time,
+.ws-row-meta .ws-topic,
+.ws-row-meta .ws-speaker {
+  color: var(--cnu-gray-500);
+}
+
+.ws-row-section {
+  background: var(--cnu-navy);
+  color: var(--white);
+}
+
+.ws-row-section .ws-time,
+.ws-row-section .ws-topic,
+.ws-row-section .ws-topic strong {
+  color: var(--white);
+}
+
+.ws-row-sub {
+  background: var(--cnu-gray-50);
+}
+
+.ws-row-sub .ws-topic {
+  padding-left: 12px;
+  color: var(--cnu-gray-700);
+}
+
+.ws-row-dinner {
+  background: linear-gradient(90deg, rgba(0, 47, 108, 0.04) 0%, transparent 100%);
+}
+
+.ws-row-dinner .ws-speaker {
+  font-size: 18px;
+}
+
+.ws-footnote {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--cnu-gray-500);
+  font-size: 13px;
+  font-style: italic;
+}
+
 /* ===== Contact Table (담당업무 및 연락처) ===== */
 .contact-table-wrap {
   background: var(--white);
@@ -1809,6 +2008,12 @@ ul, ol {
   .contact-table tbody td:first-child { padding-left: 16px; }
   .contact-table .col-task { padding-left: 16px; }
   .contact-table tbody a { font-size: 14px; }
+  .ws-hero { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; }
+  .ws-hero-meta h2 { font-size: 26px; }
+  .ws-hero-facts { grid-template-columns: 1fr 1fr; }
+  .ws-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 18px; }
+  .ws-speaker { text-align: left; font-size: 13px; }
+  .ws-time { font-size: 13px; }
   .method-compare { padding: 24px 20px; }
   .method-table tbody th { width: 100px; font-size: 13px; }
   .method-table th, .method-table td { padding: 10px 8px; font-size: 13px; }
