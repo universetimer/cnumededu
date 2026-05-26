@@ -1230,6 +1230,164 @@ ul, ol {
   font-weight: 700;
 }
 
+/* ===== Featured News (협약/주요 행사) ===== */
+.news-featured {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--cnu-gray-200);
+  box-shadow: var(--shadow-md);
+}
+
+.news-photo {
+  position: relative;
+  background: linear-gradient(135deg, var(--cnu-navy) 0%, var(--cnu-navy-light) 100%);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.news-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.news-photo-fallback {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 22px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
+
+.news-photo.no-image img {
+  display: none;
+}
+
+.news-body {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.news-tag {
+  background: var(--cnu-navy);
+  color: var(--white);
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.news-date {
+  color: var(--cnu-gold);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.news-venue {
+  color: var(--cnu-gray-500);
+  font-size: 13px;
+}
+
+.news-body h3 {
+  font-size: 24px;
+  color: var(--cnu-navy);
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.news-body > p {
+  font-size: 15px;
+  color: var(--cnu-gray-700);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.news-body > p strong {
+  color: var(--cnu-navy);
+  font-weight: 700;
+}
+
+.partners-block {
+  background: var(--cnu-gray-50);
+  border-left: 3px solid var(--cnu-gold);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+
+.partners-block h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cnu-navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 18px;
+}
+
+.partners-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--cnu-gray-700);
+  line-height: 1.6;
+}
+
+.partners-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--cnu-gold);
+  border-radius: 50%;
+}
+
+.partners-list li strong {
+  color: var(--cnu-navy);
+  font-weight: 700;
+}
+
+.news-source {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--cnu-gray-200);
+  font-size: 12px;
+  color: var(--cnu-gray-500);
+  font-style: italic;
+}
+
 /* ===== Team Gallery (단체 사진) ===== */
 .team-gallery {
   display: grid;
@@ -1578,6 +1736,11 @@ ul, ol {
     grid-template-areas: "main" "side1" "side2" "side3";
   }
   .team-photo-main img { min-height: 240px; }
+  .news-featured { grid-template-columns: 1fr; }
+  .news-photo { min-height: 260px; }
+  .news-body { padding: 28px 22px; }
+  .news-body h3 { font-size: 20px; }
+  .partners-list { grid-template-columns: 1fr; }
   .method-compare { padding: 24px 20px; }
   .method-table tbody th { width: 100px; font-size: 13px; }
   .method-table th, .method-table td { padding: 10px 8px; font-size: 13px; }
