@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 활용 MEQ 채점 워크숍 | 충남대학교 의과대학 의학교육실</title>
+  <meta name="description" content="2026.5.27 진행되는 AI를 활용한 주관식(MEQ) 문항 채점 개발 워크숍 — Agentic AI, LLM API, 프롬프트 엔지니어링 기초 실습.">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="충남대학교 의과대학 의학교육실">
+  <meta property="og:title" content="AI 활용 MEQ 채점 개발 워크숍">
+  <meta property="og:description" content="2026.05.27 (수) | 진료실기교육센터 3층 TBL실 | 3시간 집중 실습">
+  <meta property="og:url" content="https://cnumededu.com/workshop-meq-2026.html">
+  <meta property="og:image" content="https://cnumededu.com/images/og-image.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cnumededu.com/images/og-image.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>충남대학교 의과대학 의학교육실</span>
+      <nav>
+        <a href="https://plus.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">충남대학교</a>
+        <a href="https://medicine.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">의과대학</a>
+        <a href="https://medicine.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">의학전문대학원</a>
+        <a href="https://portal.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">CNU Portal</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">CNU</div>
+        <div class="logo-text">
+          <strong>의학교육실</strong>
+          <span>MEDICAL EDUCATION OFFICE</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="curriculum.html">교육과정</a></li>
+          <li><a href="members.html">구성원</a></li>
+          <li><a href="faculty.html">우수 교원</a></li>
+          <li><a href="board.html">공지·자료실</a></li>
+          <li><a href="guestbook.html">방명록</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>AI 활용 MEQ 채점 개발 워크숍</h1>
+      <p class="breadcrumb"><a href="index.html">홈</a> &gt; <a href="board.html">공지·자료실</a> &gt; AI MEQ 워크숍</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="ws-hero">
+        <div class="ws-hero-meta">
+          <span class="ws-tag">2026 연수교육</span>
+          <h2>AI를 활용한 주관식(MEQ)<br>문항 채점 개발 워크숍</h2>
+          <p class="ws-lead">졸업역량평가의 핵심인 MEQ — 임상시나리오 기반 단계별 정보 해석·임상추론·의사결정 평가에서 교수자의 채점 부담을 완화하고 평가 일관성·신뢰도를 높이기 위한 AI 활용 실습 워크숍입니다.</p>
+        </div>
+        <div class="ws-hero-facts">
+          <div class="ws-fact">
+            <span class="ws-fact-label">일시</span>
+            <strong>2026.05.27(수)<br>15:00~18:00</strong>
+            <span class="ws-fact-note">3시간 집중 실습</span>
+          </div>
+          <div class="ws-fact">
+            <span class="ws-fact-label">장소</span>
+            <strong>진료실기교육센터<br>3층 TBL실</strong>
+            <span class="ws-fact-note">대면 · 실습 중심</span>
+          </div>
+          <div class="ws-fact">
+            <span class="ws-fact-label">대상</span>
+            <strong>의과대학 교수</strong>
+            <span class="ws-fact-note">MEQ 채점 부담 완화 희망<br>최대 30명</span>
+          </div>
+          <div class="ws-fact">
+            <span class="ws-fact-label">혜택</span>
+            <strong>교원업적평가 반영</strong>
+            <span class="ws-fact-note">교육영역 교내외 교수개발<br>연수교육 3시간 인정</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ws-checklist">
+        <h3>📋 참석자 준비물</h3>
+        <ul>
+          <li><strong>개인 노트북</strong> 지참</li>
+          <li><strong>ChatGPT Plus 또는 Pro</strong> 회원가입 (사전 권장)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <span class="label">PURPOSE</span>
+        <h2>워크숍 목적 및 필요성</h2>
+      </div>
+
+      <div class="vision-grid">
+        <div class="vision-card">
+          <div class="vision-icon">①</div>
+          <h3>MEQ 평가의 가치</h3>
+          <p>MEQ(Modified Essay Question)는 우리대학 졸업역량평가 항목 중 하나로, 학생의 <strong>단계별 정보 해석 · 임상추론 · 의사결정 과정</strong>을 평가하는 주관식 평가 방법입니다.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-icon">②</div>
+          <h3>교수자의 부담</h3>
+          <p>문항 개발부터 채점·문항분석까지 많은 시간과 지속적인 노력이 요구되며, 평가자 간 <strong>편차</strong>가 발생할 수 있다는 한계가 있습니다.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-icon">③</div>
+          <h3>AI로 풀어내기</h3>
+          <p>AI 활용을 통해 채점 부담을 완화하고, 평가의 <strong>일관성과 신뢰도</strong>를 높이기 위해 교수자 대상 실습 교육을 실시합니다.</p>
+        </div>
+      </div>
+
+      <div class="ws-main-topics">
+        <h3>📚 주요 학습 내용</h3>
+        <div class="ws-topics-grid">
+          <span>AI Agent에 대한 이해</span>
+          <span>Agentic AI Systems Design 기초</span>
+          <span>API 활용에 대한 이해</span>
+          <span>프롬프트 엔지니어링 기초</span>
+        </div>
+        <p class="ws-cert-note">관련기준: 의학교육평가인증 <strong>ASK2019</strong> 2.교육과정 · 3.학생평가 · 5.교수 (K.5.2.2, K.5.2.5)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="label">PROGRAM · 2026.05.27 (수)</span>
+        <h2>세부 일정</h2>
+      </div>
+
+      <div class="ws-schedule">
+        <div class="ws-row"><span class="ws-time">15:00~15:10</span><span class="ws-topic">인사말 <small>(10분)</small></span><span class="ws-speaker">–</span></div>
+        <div class="ws-row ws-row-key"><span class="ws-time">15:10~16:10</span><span class="ws-topic"><strong>Agentic AI 시스템 설계와 LLM API 이용</strong><br><small>강의 60분</small></span><span class="ws-speaker">안상진 교수<br><small>(인제의대)</small></span></div>
+        <div class="ws-row ws-row-meta"><span class="ws-time">16:10~16:20</span><span class="ws-topic">휴식 <small>(10분)</small></span><span class="ws-speaker">–</span></div>
+        <div class="ws-row ws-row-key"><span class="ws-time">16:20~17:10</span><span class="ws-topic"><strong>AI를 활용한 MEQ 채점 실습</strong><br><small>실습 50분</small></span><span class="ws-speaker">–</span></div>
+        <div class="ws-row ws-row-meta"><span class="ws-time">17:10~17:20</span><span class="ws-topic">휴식 <small>(10분)</small></span><span class="ws-speaker">–</span></div>
+        <div class="ws-row ws-row-key"><span class="ws-time">17:20~17:50</span><span class="ws-topic"><strong>나의 MEQ 채점 프롬프트 개발과 피드백</strong><br><small>향후 발전 방향 등에 대한 토의 · 30분</small></span><span class="ws-speaker">정성수 교수<br><small>(충남의대)</small></span></div>
+        <div class="ws-row"><span class="ws-time">17:50~18:00</span><span class="ws-topic">질의 응답 및 마무리 <small>(10분)</small></span><span class="ws-speaker">–</span></div>
+      </div>
+
+      <p class="ws-footnote">* 세부일정은 장소 및 상황에 따라 변경될 수 있습니다.</p>
+
+      <div class="ws-cta">
+        <a href="files/2026-AI-MEQ-채점-워크숍-계획안.pdf" class="btn btn-primary" download>📥 계획안 PDF 다운로드</a>
+        <a href="board.html" class="btn btn-outline-navy">← 공지·자료실로</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>충남대학교 의과대학 의학교육실</strong>
+          <p>
+            (35015) 대전광역시 중구 문화로 266 (문화동) 충남대학교 의과대학<br>
+            TEL. 042-580-XXXX &nbsp;|&nbsp; FAX. 042-580-XXXX &nbsp;|&nbsp; medu@cnu.ac.kr
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>바로가기</h4>
+          <ul>
+            <li><a href="curriculum.html">교육과정</a></li>
+            <li><a href="members.html">구성원</a></li>
+            <li><a href="board.html">공지·자료실</a></li>
+            <li><a href="guestbook.html">방명록</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>관련 사이트</h4>
+          <ul>
+            <li><a href="https://plus.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">충남대학교</a></li>
+            <li><a href="https://medicine.cnu.ac.kr/" target="_blank" rel="noopener noreferrer">충남대 의과대학</a></li>
+            <li><a href="https://www.cnuh.co.kr/" target="_blank" rel="noopener noreferrer">충남대학교병원</a></li>
+            <li><a href="https://www.kimee.or.kr/" target="_blank" rel="noopener noreferrer">한국의학교육평가원</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Chungnam National University Medical Education Office. All rights reserved.</span>
+        <span>이용약관 &nbsp;|&nbsp; 개인정보처리방침</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
