@@ -704,6 +704,29 @@ ul, ol {
   color: var(--cnu-gray-500);
 }
 
+/* Adjunct (겸임) — slight visual distinction */
+.member-adjunct .member-role {
+  color: var(--cnu-gold);
+}
+
+.member-adjunct::before {
+  content: '겸임';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--cnu-gold);
+  color: var(--cnu-navy-dark);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
+
+.member-adjunct {
+  position: relative;
+}
+
 /* ===== Workshop Hero & Schedule ===== */
 .ws-hero {
   display: grid;
@@ -1094,6 +1117,44 @@ ul, ol {
   padding: 40px;
 }
 
+/* Placeholder when Giscus is not yet installed */
+.guestbook-placeholder {
+  background: linear-gradient(135deg, var(--cnu-sky) 0%, #DCEAF8 100%);
+  border: 1px solid var(--cnu-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 56px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.gb-placeholder-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.guestbook-placeholder h3 {
+  font-size: 22px;
+  color: var(--cnu-navy);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.guestbook-placeholder > p {
+  font-size: 15px;
+  color: var(--cnu-gray-700);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.gb-placeholder-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Admin setup details */
 .guestbook-setup-notice {
   margin-top: 24px;
   background: #FFFBEB;
@@ -1102,32 +1163,99 @@ ul, ol {
   padding: 16px 20px;
 }
 
-.guestbook-setup-notice strong {
+.guestbook-setup-notice summary {
+  cursor: pointer;
+  color: var(--cnu-navy);
+  font-size: 14px;
+  outline: none;
+  user-select: none;
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+.guestbook-setup-notice summary::-webkit-details-marker {
+  display: none;
+}
+
+.guestbook-setup-notice summary::before {
+  content: '▸';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--cnu-gold);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.guestbook-setup-notice[open] summary::before {
+  transform: rotate(90deg);
+  left: 0;
+}
+
+.gb-setup-body {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--cnu-gold);
+}
+
+.gb-setup-body > p {
+  font-size: 13px;
+  color: var(--cnu-gray-700);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.gb-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.gb-steps li {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  border: 1px solid var(--cnu-gray-200);
+}
+
+.gb-steps strong {
   display: block;
   color: var(--cnu-navy);
   font-weight: 700;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
-.guestbook-setup-notice p {
+.gb-steps p {
   font-size: 13px;
   color: var(--cnu-gray-700);
   line-height: 1.7;
+  margin: 0;
 }
 
-.guestbook-setup-notice code {
-  background: var(--white);
+.gb-steps code {
+  background: var(--cnu-sky);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
   font-family: 'SF Mono', Consolas, monospace;
   color: var(--cnu-navy);
+  font-weight: 600;
 }
 
-.guestbook-setup-notice a {
+.gb-steps a,
+.gb-setup-body a {
   color: var(--cnu-navy);
   font-weight: 600;
   text-decoration: underline;
+}
+
+.gb-steps em {
+  font-style: normal;
+  color: var(--cnu-gold);
+  font-weight: 700;
 }
 
 /* ===== Contact Table (담당업무 및 연락처) ===== */

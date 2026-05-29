@@ -96,34 +96,42 @@
         </div>
       </div>
 
-      <!-- Giscus comments -->
-      <div class="guestbook-widget">
-        <script src="https://giscus.app/client.js"
-          data-repo="universetimer/cnumededu"
-          data-repo-id="REPO_ID_PLACEHOLDER"
-          data-category="General"
-          data-category-id="CATEGORY_ID_PLACEHOLDER"
-          data-mapping="specific"
-          data-term="guestbook"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="top"
-          data-theme="light"
-          data-lang="ko"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-        </script>
-        <noscript>
-          <p class="gb-fallback">방명록을 사용하려면 JavaScript를 활성화해주세요.</p>
-        </noscript>
+      <!-- Guestbook placeholder (Giscus 설치 전) -->
+      <div class="guestbook-placeholder">
+        <div class="gb-placeholder-icon">💬</div>
+        <h3>방명록을 준비하고 있습니다</h3>
+        <p>지금은 의학교육실에 직접 메시지를 보내실 수 있습니다.<br>댓글 시스템은 곧 활성화될 예정입니다.</p>
+        <div class="gb-placeholder-cta">
+          <a href="mailto:medu@cnu.ac.kr?subject=의학교육실 방명록" class="btn btn-primary">📧 이메일로 의견 보내기</a>
+          <a href="tel:042-580-8280" class="btn btn-outline-navy">📞 042-580-8280</a>
+        </div>
       </div>
 
-      <div class="guestbook-setup-notice">
-        <strong>⚙️ 관리자 안내</strong>
-        <p>Giscus 위젯을 활성화하려면 GitHub 저장소에 <a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreferrer">Giscus 앱 설치</a> 후 <a href="https://giscus.app/ko" target="_blank" rel="noopener noreferrer">giscus.app</a>에서 발급받은 <code>data-repo-id</code> / <code>data-category-id</code>를 위 코드에 채워넣으면 됩니다. 설치 가이드는 README를 확인하세요.</p>
-      </div>
+      <details class="guestbook-setup-notice">
+        <summary><strong>⚙️ 관리자 — 방명록 활성화 절차</strong></summary>
+        <div class="gb-setup-body">
+          <p>본 사이트의 방명록은 GitHub Discussions 기반 <a href="https://giscus.app/ko" target="_blank" rel="noopener noreferrer">Giscus</a>로 동작합니다. 다음 4단계를 차례로 진행하면 위 자리표시자가 실제 댓글창으로 자동 전환됩니다.</p>
+
+          <ol class="gb-steps">
+            <li>
+              <strong>1단계 — Giscus 앱 설치</strong>
+              <p><a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreferrer">github.com/apps/giscus</a> 접속 → <em>Install</em> 클릭 → <em>Only select repositories</em> → <code>cnumededu</code> 선택</p>
+            </li>
+            <li>
+              <strong>2단계 — Discussions 기능 활성화</strong>
+              <p><a href="https://github.com/universetimer/cnumededu/settings#features" target="_blank" rel="noopener noreferrer">저장소 설정 → Features</a> → <em>Discussions</em> 체크박스 On</p>
+            </li>
+            <li>
+              <strong>3단계 — Giscus 구성 (ID 발급)</strong>
+              <p><a href="https://giscus.app/ko" target="_blank" rel="noopener noreferrer">giscus.app/ko</a> 접속 → 저장소 입력란에 <code>universetimer/cnumededu</code> → 매핑은 <em>특정 용어</em>, 카테고리는 <em>General</em> 선택. 페이지 아래에 생성된 <code>&lt;script&gt;</code> 태그에서 <code>data-repo-id</code> 와 <code>data-category-id</code> 값을 복사</p>
+            </li>
+            <li>
+              <strong>4단계 — 값 알려주기</strong>
+              <p>발급받은 두 ID를 알려주시면 <code>guestbook.html</code>에 반영해 즉시 활성화하겠습니다 (또는 README의 코드 스니펫 부분을 직접 수정해 git push 해도 됩니다).</p>
+            </li>
+          </ol>
+        </div>
+      </details>
     </div>
   </section>
 
