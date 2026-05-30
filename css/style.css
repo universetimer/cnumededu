@@ -886,30 +886,119 @@ ul, ol {
   box-shadow: none;
 }
 
-/* OSCE block */
-.osce-block {
+/* Sub-section labels inside a member-section */
+.subsection-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 14px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--cnu-navy);
+  letter-spacing: 0.5px;
+}
+
+.subsection-label::before,
+.subsection-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cnu-gray-200);
+}
+
+.subsection-label-gold {
+  color: var(--cnu-navy);
+}
+
+.subsection-label-gold::before,
+.subsection-label-gold::after {
+  background: var(--cnu-gold);
+  height: 2px;
+  opacity: 0.6;
+}
+
+/* OSCE dedicated subsection */
+.osce-section {
   background: var(--white);
   border: 2px solid var(--cnu-gold);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
-.osce-block-header {
-  background: linear-gradient(90deg, var(--cnu-navy) 0%, var(--cnu-navy-light) 100%);
-}
-
-.osce-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
+.osce-section-head {
+  background: linear-gradient(135deg, var(--cnu-navy) 0%, var(--cnu-navy-light) 100%);
+  color: var(--white);
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 24px;
-  padding: 24px;
-  align-items: start;
+  flex-wrap: wrap;
 }
 
-/* OSCE 센터장 card — leadership style but smaller */
+.oss-title h4 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  margin-bottom: 2px;
+}
+
+.oss-title .oss-divider {
+  color: var(--cnu-gold);
+  margin: 0 4px;
+}
+
+.oss-title p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.oss-summary {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(200, 164, 92, 0.4);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.osce-people {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  padding: 24px 24px 0;
+  align-items: stretch;
+}
+
+/* OSCE 센터장 card — leadership style smaller, with badge */
 .member-director-sm {
   padding: 22px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.osce-director-card {
+  position: relative;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.osce-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--cnu-gold);
+  color: var(--cnu-navy-dark);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 100px;
 }
 
 .member-director-sm .member-photo {
@@ -926,43 +1015,60 @@ ul, ol {
 .member-director-sm .member-name {
   font-size: 19px;
   margin-bottom: 2px;
+  text-align: center;
 }
 
 .member-director-sm .member-role {
   font-size: 12px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .member-director-sm .member-contact {
   font-size: 12.5px;
+  text-align: center;
 }
 
-.osce-staff-block {
-  align-self: stretch;
+.osce-staff-list {
+  background: var(--cnu-gray-50);
+  border-radius: var(--radius-md);
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
-.osce-staff-row-2 {
+.osce-staff-list-head {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--cnu-navy);
+  letter-spacing: 0.5px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--cnu-gray-200);
+  margin-bottom: 4px;
+}
+
+.osce-staff-item {
+  background: var(--white);
+  padding: 10px 12px;
+}
+
+.osce-tasks-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  padding: 18px 24px 24px;
 }
 
-.osce-staff-row-2 .staff-compact {
-  background: var(--cnu-gray-50);
-}
-
-.osce-tasks {
-  font-size: 13px;
-  color: var(--cnu-gray-700);
-  line-height: 1.7;
-  padding: 14px 18px;
+.osce-tasks-grid span {
   background: var(--cnu-sky);
+  color: var(--cnu-navy);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 12px;
   border-radius: var(--radius-md);
   border-left: 3px solid var(--cnu-gold);
-  margin: 0;
+  line-height: 1.4;
 }
 
 /* ===== (legacy) Staff Cards (직원 업무 분장) ===== */
@@ -3011,6 +3117,10 @@ ul, ol {
   .osce-staff-row-2 { grid-template-columns: 1fr; }
   .osce-layout { grid-template-columns: 1fr; padding: 18px; }
   .member-director-sm { max-width: 280px; margin: 0 auto; }
+  .osce-people { grid-template-columns: 1fr; padding: 18px 18px 0; }
+  .osce-section-head { padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .oss-summary { font-size: 12px; }
+  .osce-tasks-grid { padding: 14px 18px 18px; grid-template-columns: 1fr; }
   .method-compare { padding: 24px 20px; }
   .method-table tbody th { width: 100px; font-size: 13px; }
   .method-table th, .method-table td { padding: 10px 8px; font-size: 13px; }
