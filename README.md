@@ -54,24 +54,28 @@ cnu-medical-education/
 
 `data-cat` 값: `notice` / `edu` / `event` / `data`
 
-## 방명록(Giscus) 활성화 방법
+## 방명록 활성화 (Cloudflare KV 연결 1회)
 
-방명록은 GitHub Discussions 기반의 [Giscus](https://giscus.app/ko)로 동작합니다. 실제 댓글 기능을 켜려면:
+방명록은 Cloudflare Pages Functions(`functions/api/guestbook.js`) + KV로 동작합니다. 사이트 코드는 이미 모두 작성되어 있으므로 **Cloudflare 대시보드에서 KV 네임스페이스만 한 번 연결**하면 즉시 작동합니다.
 
-1. **GitHub 저장소에 Discussions 활성화**
-   `https://github.com/universetimer/cnumededu/settings` → `Features` → `Discussions` 체크
-2. **Giscus 앱 설치**
-   [github.com/apps/giscus](https://github.com/apps/giscus) 에서 `cnumededu` 저장소만 권한 부여
-3. **저장소 ID & 카테고리 ID 발급**
-   [giscus.app/ko](https://giscus.app/ko) 에 가서 `universetimer/cnumededu` 입력 → 발급된 `data-repo-id`, `data-category-id` 값 복사
-4. **`guestbook.html`의 placeholder 교체**
-   ```
-   data-repo-id="REPO_ID_PLACEHOLDER"      ← 실제 값으로
-   data-category-id="CATEGORY_ID_PLACEHOLDER" ← 실제 값으로
-   ```
-5. **commit + push**
+1. **KV 네임스페이스 생성**
+   Cloudflare 대시보드 → Workers & Pages → 좌측 `KV` → `Create a namespace` → 이름 `cnumededu-guestbook`
+2. **Pages 프로젝트에 바인딩**
+   Workers & Pages → `cnumededu` 프로젝트 → Settings → Functions → KV namespace bindings → Add binding
+   - Variable name: `GUESTBOOK`
+   - KV namespace: `cnumededu-guestbook`
+3. **재배포**
+   Deployments → 최신 배포 옆 `Retry deployment` (30초 후 작동)
 
-이후 방문자는 GitHub 계정으로 로그인해 글을 남길 수 있고, 모든 글은 GitHub Discussions에 자동 저장됩니다.
+(선택) 관리자 삭제 기능: `Settings → Environment variables` → Production → `ADMIN_TOKEN` 추가. `DELETE /api/guestbook?id=...` 호출 시 `X-Admin-Token` 헤더로 인증.
+
+### API 엔드포인트
+
+| Method | Path | 설명 |
+| --- | --- | --- |
+| GET | `/api/guestbook` | 메시지 목록 (최신순) |
+| POST | `/api/guestbook` | 메시지 등록 (`{name, message}`) — IP당 분당 3회 제한 |
+| DELETE | `/api/guestbook?id=...` | 관리자 삭제 (ADMIN_TOKEN 필요) |
 
 ## 보직 교원 인물 사진
 

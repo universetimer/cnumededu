@@ -1295,7 +1295,208 @@ ul, ol {
   padding: 40px;
 }
 
-/* Placeholder when Giscus is not yet installed */
+/* Guestbook form */
+.gb-form {
+  background: var(--white);
+  border: 1px solid var(--cnu-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.gb-form-row { margin-bottom: 18px; }
+.gb-field { display: block; }
+.gb-label {
+  display: block;
+  font-size: 13px;
+  color: var(--cnu-navy);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.gb-field input,
+.gb-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--cnu-gray-300);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--cnu-gray-900);
+  background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  resize: vertical;
+}
+
+.gb-field input:focus,
+.gb-field textarea:focus {
+  outline: none;
+  border-color: var(--cnu-navy);
+  box-shadow: 0 0 0 3px rgba(0, 47, 108, 0.12);
+}
+
+.gb-counter {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--cnu-gray-500);
+  margin-top: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+}
+
+.gb-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.gb-form-actions button { padding: 12px 24px; }
+
+.gb-status {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnu-gray-500);
+}
+.gb-status[data-kind="ok"] { color: #166534; }
+.gb-status[data-kind="err"] { color: #B91C1C; }
+
+/* List */
+.gb-list-wrap {
+  margin-bottom: 32px;
+}
+
+.gb-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--cnu-navy);
+}
+
+.gb-list-header h3 {
+  font-size: 20px;
+  color: var(--cnu-navy);
+  font-weight: 800;
+}
+
+.gb-count {
+  font-size: 13px;
+  color: var(--cnu-gray-500);
+  font-weight: 600;
+}
+
+.gb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gb-loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--cnu-gray-500);
+  background: var(--cnu-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.gb-empty {
+  text-align: center;
+  padding: 56px 24px;
+  background: var(--cnu-gray-50);
+  border: 1px dashed var(--cnu-gray-300);
+  border-radius: var(--radius-lg);
+}
+
+.gb-empty-icon {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.gb-empty strong {
+  display: block;
+  color: var(--cnu-navy);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.gb-empty p {
+  font-size: 14px;
+  color: var(--cnu-gray-500);
+  margin: 0;
+}
+
+.gb-entry {
+  background: var(--white);
+  border: 1px solid var(--cnu-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+
+.gb-entry:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--cnu-gray-300);
+}
+
+.gb-entry-avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cnu-navy), var(--cnu-navy-light));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.gb-entry-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.gb-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.gb-entry-head strong {
+  color: var(--cnu-navy);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.gb-entry-head time {
+  font-size: 12px;
+  color: var(--cnu-gray-500);
+  font-family: 'SF Mono', Consolas, monospace;
+}
+
+.gb-entry-message {
+  color: var(--cnu-gray-700);
+  font-size: 14.5px;
+  line-height: 1.7;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Placeholder (kept for backward compat, unused now) */
 .guestbook-placeholder {
   background: linear-gradient(135deg, var(--cnu-sky) 0%, #DCEAF8 100%);
   border: 1px solid var(--cnu-gray-200);
